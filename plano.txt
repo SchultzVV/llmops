@@ -1,0 +1,87 @@
+terminar o plano
+
+--------------------------------------------------------
+Llama 2: Open Foundation and Fine-Tuned Chat Models
+referencia https://arxiv.org/pdf/2307.09288
+--------------------------------------------------------
+
+Fine-Tuning a Chatbot for Universidade Federal de Santa Maria (UFSM)
+Once you have the LLM running locally, you can fine-tune it for a specific use case, such as a university chatbot. Here’s how:
+
+1. Define the Use Case
+For UFSM, the chatbot could:
+
+Answer FAQs about admissions, courses, and campus life.
+
+Provide information about research opportunities.
+
+Assist with administrative tasks (e.g., enrollment, deadlines).
+
+2. Collect Data
+Gather data specific to UFSM:
+
+University website content.
+
+FAQs and brochures.
+
+Past student queries (if available).
+
+Course catalogs and academic regulations.
+
+3. Preprocess the Data
+Clean and format the data for fine-tuning:
+
+Convert it into a question-answer format.
+
+Remove irrelevant information.
+
+Tokenize the text for the model.
+
+4. Fine-Tune the Model
+Use the Hugging Face Trainer API or a similar framework to fine-tune the model:
+
+python
+Copy
+from transformers import Trainer, TrainingArguments
+
+training_args = TrainingArguments(
+    output_dir="./results",
+    per_device_train_batch_size=4,
+    num_train_epochs=3,
+    logging_dir="./logs",
+)
+
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=train_dataset,  # Your preprocessed dataset
+)
+
+trainer.train()
+5. Evaluate the Model
+Test the chatbot with sample queries to ensure it provides accurate and relevant responses. Adjust the fine-tuning process as needed.
+
+6. Deploy the Chatbot
+You can deploy the chatbot:
+
+Locally for testing.
+
+On a university server for wider access.
+
+Integrate it into the university’s website or app.
+
+7. Monitor and Improve
+Collect user feedback.
+
+Continuously update the model with new data.
+
+Monitor performance and retrain as needed.
+
+Tools and Frameworks to Explore
+Hugging Face Transformers: For model loading and fine-tuning.
+
+LangChain: For building conversational agents.
+
+Llama.cpp: For running LLMs efficiently on CPUs.
+
+Gradio/Streamlit: For creating a user interface for the chatbot.
