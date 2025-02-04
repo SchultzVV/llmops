@@ -1,4 +1,5 @@
 ## 📌 Módulo 1: Introdução ao LLMOps e Aplicações Práticas
+
 🔹 1.1 O que é um LLM e onde ele é aplicado?
 Definição de Large Language Models (LLMs).
 Diferença entre LLMs tradicionais (GPT-3, LLaMA, etc.) e modelos menores (T5, DistilBERT, etc.).
